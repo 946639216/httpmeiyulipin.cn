@@ -1,0 +1,203 @@
+@import "pagination";
+@import "registry";
+@import "public";
+#box1 {
+    position: relative;
+    width: 163px;
+    height: 40px;
+    line-height: 40px;
+    background: #666;
+    cursor: pointer;
+    top: 8px;
+    border: 1px solid #b8b8b8;
+    border-bottom: 0;
+    text-align: center;
+    /* background-color: aqua; */
+    h2 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: 500;
+    }
+    a {
+        color: #fff;
+    }
+    .tab {
+        height: 539px;
+        position: relative;
+        border: 1px solid transparent;
+        border-color: rgba(255, 255, 255, 0.35);
+        border-top: 0;
+        background: rgba(46, 46, 46, 0.4);
+        z-index: 30;
+        >a {
+            display: block;
+            height: 44px;
+            line-height: 44px;
+            position: relative;
+            p {
+                text-decoration: underline;
+            }
+            &:hover {
+                font-weight: 600;
+            }
+            span {
+                position: absolute;
+                right: 12px;
+                top: 0;
+                display: none;
+            }
+        }
+        .item {
+            display: none;
+            img {
+                float: left;
+                width: 190px;
+                height: 240px;
+                border-radius: 4px;
+                margin: 0 0 10px 10px;
+            }
+        }
+    }
+    .alldiv {
+        width: 400px;
+        height: 518px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        position: absolute;
+        left: 160px;
+        top: 0;
+        z-index: 25;
+        background: rgba(255, 255, 255, 0.95);
+        .mcu {
+            width: 150px;
+            li {
+                font-size: 14px;
+                line-height: 35px;
+                text-align: center;
+                a {
+                    display: block;
+                    padding-left: 30px;
+                    border-bottom: 1px dashed #ddd;
+                    color: #000;
+                }
+            }
+        }
+        .mcr {
+            width: 190px;
+        }
+    }
+}
+
+.spric {
+    color: #000;
+    position: relative;
+    &:hover {
+        color: red;
+    }
+    .moren {
+        position: absolute;
+        left: 58px;
+        top: 0px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 10px solid #666;
+    }
+    .sort {
+        position: absolute;
+        left: 58px;
+        bottom: 0px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 10px solid #666;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 0;
+    }
+}
+
+.navlist {
+    >a {
+        padding: 0 28px;
+        font-weight: 600;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        float: left;
+        margin-top: 8px;
+        &:hover {
+            background-color: #e6e6e6;
+        }
+    }
+}
+
+.pu {
+    width: 1165px;
+    /* background-color: aqua; */
+    list-style: none;
+    float: right;
+    margin-top: 20px;
+    li {
+        float: left;
+        position: relative;
+        width: 220px;
+        margin: 10px 40px 30px 10px;
+        &:hover {
+            .joinppt {
+                display: block;
+            }
+        }
+        a {
+            p {
+                width: 220px;
+                font-size: 14px;
+                margin: 0 auto;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                height: 50px;
+                line-height: 25px;
+                color: #444;
+            }
+            img {
+                width: 219px;
+                height: 219px;
+            }
+        }
+    }
+    span {
+        font-size: 14px;
+        color: #f00;
+        font-weight: 600;
+    }
+    .joinppt {
+        background: #f00;
+        padding: 2px 15px;
+        color: #fff;
+        border-radius: 6px;
+        font-size: 12px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        &:hover {
+            color: #f00;
+        }
+    }
+}
+
+.pu {
+    .join {
+        background: #eee;
+        padding: 5px 15px;
+        float: right;
+        border-radius: 6px;
+        font-size: 12px;
+        color: #666;
+    }
+}

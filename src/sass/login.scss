@@ -1,0 +1,43 @@
+@import "registry";
+.tong {
+    .fl {
+        .red {
+            color: #333;
+            &:hover {
+                color: #f00;
+            }
+        }
+    }
+}
+
+.mdb {
+    position: relative;
+    i {
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url(http://meiyulipin.cn/c/user/css2020/images/m1.png) no-repeat;
+        position: absolute;
+        left: 15px;
+        top: 22px;
+    }
+    input {
+        text-indent: 20px;
+    }
+}
+
+.mdc {
+    position: relative;
+    i {
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url(http://meiyulipin.cn/c/user/css2020/images/m2.png) no-repeat;
+        position: absolute;
+        left: 15px;
+        top: 22px;
+    }
+    input {
+        text-indent: 20px;
+    }
+}

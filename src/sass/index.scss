@@ -1,0 +1,1028 @@
+    @import "registry";
+    @import "login";
+    #box1 {
+        position: relative;
+        width: 163px;
+        height: 40px;
+        line-height: 40px;
+        background: #666;
+        cursor: pointer;
+        top: 8px;
+        border: 1px solid #b8b8b8;
+        border-bottom: 0;
+        text-align: center;
+        /* background-color: aqua; */
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            font-weight: 500;
+        }
+        a {
+            color: #fff;
+        }
+        .tab {
+            height: 539px;
+            position: relative;
+            border: 1px solid transparent;
+            border-color: rgba(255, 255, 255, 0.35);
+            border-top: 0;
+            background: rgba(46, 46, 46, 0.4);
+            z-index: 30;
+            >a {
+                display: block;
+                height: 44px;
+                line-height: 44px;
+                position: relative;
+                p {
+                    text-decoration: underline;
+                }
+                &:hover {
+                    font-weight: 600;
+                }
+                span {
+                    position: absolute;
+                    right: 12px;
+                    top: 0;
+                    display: none;
+                }
+            }
+            .item {
+                display: none;
+                img {
+                    float: left;
+                    width: 190px;
+                    height: 240px;
+                    border-radius: 4px;
+                    margin: 0 0 10px 10px;
+                }
+            }
+        }
+        .alldiv {
+            width: 400px;
+            height: 518px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            position: absolute;
+            left: 160px;
+            top: 0;
+            z-index: 25;
+            background: rgba(255, 255, 255, 0.95);
+            .mcu {
+                width: 150px;
+                li {
+                    font-size: 14px;
+                    line-height: 35px;
+                    text-align: center;
+                    a {
+                        display: block;
+                        padding-left: 30px;
+                        border-bottom: 1px dashed #ddd;
+                        color: #000;
+                    }
+                }
+            }
+            .mcr {
+                width: 190px;
+            }
+        }
+    }
+    
+    .navlist {
+        >a {
+            padding: 0 28px;
+            font-weight: 600;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            margin-top: 8px;
+            &:hover {
+                background-color: #e6e6e6;
+            }
+        }
+    }
+    
+    // 轮播图部分
+    .lubo {
+        height: 540px;
+        position: relative;
+        cursor: pointer;
+        background-color: rgba(46, 46, 46, 0.4);
+        z-index: 0;
+        ul {
+            width: 1920px;
+            background-color: #999;
+            margin-left: auto;
+            position: absolute;
+            left: 50%;
+            margin-left: -960px;
+            li {
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+            }
+            li:nth-of-type(1) {
+                opacity: 1;
+            }
+        }
+        ol {
+            overflow: hidden;
+            position: absolute;
+            z-index: 100;
+            left: 50%;
+            margin-left: -80px;
+            bottom: 10%;
+            li {
+                float: left;
+                width: 30px;
+                height: 5px;
+                margin: 0 5px;
+                cursor: pointer;
+                background: #b8b8b8;
+                opacity: 0.8;
+            }
+            li.active {
+                background-color: #000;
+            }
+        }
+        #leftarrow,
+        #rightarrow {
+            width: 30px;
+            height: 80px;
+            background: #000;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            cursor: pointer;
+            color: #fff;
+            line-height: 80px;
+            font-size: 30px;
+            text-align: center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: absolute;
+            top: 230px;
+        }
+        #leftarrow {
+            left: 0;
+        }
+        #rightarrow {
+            right: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    
+    .nav {
+        padding: 30px 0;
+        a {
+            display: block;
+            float: left;
+            margin-right: 10px;
+        }
+        .no {
+            margin-right: 0;
+        }
+    }
+    
+    .pgd {
+        padding: 20px 0;
+    }
+    
+    .pgt {
+        padding-bottom: 15px;
+        span {
+            float: right;
+            margin-top: .3rem;
+            a {
+                border-radius: .5rem;
+                padding: 0.2rem .8rem;
+                border: 1px solid #eee;
+                font-size: .8rem;
+                color: #999;
+            }
+        }
+    }
+    
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        // display: flex;
+        transition-property: transform;
+        box-sizing: content-box;
+        overflow: hidden;
+    }
+    
+    .swiper-slide {
+        width: 10000px;
+        a {
+            display: block;
+            width: 175px;
+            margin-right: 15px;
+            float: left;
+            position: relative;
+            img {
+                width: 170px;
+                border-radius: .3rem;
+                border: 0;
+                width: 100%;
+                margin-top: 5px;
+            }
+            i {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                left: 50%;
+                margin-left: -30px;
+                top: 50%;
+                margin-top: -30px;
+                background: url(http://www.doliwang.cn/template/web/image/pl.png) no-repeat;
+                // background-color: #000;
+                background-size: 100%;
+            }
+        }
+        p {
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            color: #666;
+            font-weight: 500;
+            padding: 0 5px;
+            text-align: center;
+        }
+    }
+    
+    .jgtil {
+        height: 50px;
+        line-height: 50px;
+        strong {
+            font-size: 30px;
+            float: left;
+            font-weight: 600;
+        }
+        i {
+            float: left;
+            font-size: 30px;
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url(http://www.doliwang.cn/template/web/image/x.png) no-repeat;
+            background-size: 25px;
+            margin-left: 10px;
+            margin-top: 15px;
+        }
+        span {
+            font-size: 16px;
+            float: left;
+            margin-top: 8px;
+        }
+    }
+    
+    .jgtir {
+        padding-top: 9px;
+        span {
+            float: left;
+            .jgf {
+                background: #f4f4f4;
+                height: 29px;
+                width: 70px;
+                border: 2px solid #dbdbdb;
+                border-radius: 8px;
+                padding-left: 10px;
+            }
+        }
+        i {
+            float: left;
+            height: 2px;
+            background: #dbdbdb;
+            width: 20px;
+            margin: 15px 10px 0 10px;
+        }
+    }
+    
+    .spjias {
+        background: #323232;
+        color: #fff;
+        border: 0;
+        height: 33px;
+        padding: 0 15px;
+        margin-left: 12px;
+        border-radius: 8px;
+    }
+    
+    .jsd {
+        margin-left: 10px;
+        color: #999;
+        font-size: 13px;
+        margin-top: 12px;
+    }
+    
+    .tab_nav {
+        float: left;
+        width: 160px;
+        li {
+            float: left;
+            width: 160px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            background: #6b696a;
+            color: #fff;
+            margin-bottom: 5px;
+            a {
+                color: #fff;
+                display: block;
+                &:hover {
+                    font-weight: 700;
+                    background: #c43433;
+                }
+            }
+        }
+    }
+    
+    .zcx {
+        width: 1105px;
+        height: auto;
+        overflow: hidden;
+        float: right;
+        li {
+            float: left;
+            width: 180px;
+            margin-bottom: 25px;
+            margin-right: 48px;
+            position: relative;
+            border: 0px solid #ddd;
+            text-align: center;
+            margin-top: 20px;
+            a {
+                display: block;
+            }
+            img {
+                width: 100%;
+            }
+            em {
+                font-size: 15px;
+                font-weight: 700;
+                font-family: Arial;
+                color: #fc4d52;
+                font-style: normal;
+            }
+            strong {
+                display: block;
+                font-size: 14px;
+                padding: 3px 0;
+                color: #333;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            i {
+                position: absolute;
+                right: 6px;
+                top: 6px;
+                font-style: normal;
+                display: none;
+                a {
+                    background: #f00;
+                    padding: 2px 15px;
+                    color: #fff;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    margin-top: -20px;
+                }
+            }
+            &:hover {
+                i {
+                    display: block;
+                }
+            }
+            &:nth-child(5n) {
+                margin-right: 0;
+            }
+        }
+    }
+    
+    // 品牌
+    .pp {
+        padding: 5px 0;
+        background: #f3f3f3;
+        margin-bottom: 30px;
+        margin-top: 40px;
+        a {
+            display: block;
+            width: 85px;
+            height: 85px;
+            line-height: 85px;
+            background: #fff;
+            text-align: center;
+            margin: 5px 12px;
+            border-radius: 50%;
+            overflow: hidden;
+            float: left;
+            img {
+                width: 100%;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    .cls {
+        padding-top: 25px;
+        .list-item {
+            width: 170px;
+            height: 279px;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            margin-right: 21.5px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                .mask {
+                    opacity: 0.8;
+                }
+                img {
+                    transform: scale(1.1);
+                }
+                a {
+                    font-weight: 600;
+                }
+            }
+            .title {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 30px;
+                z-index: 4;
+                line-height: 22px;
+                font-size: 22px;
+                color: #fff;
+                text-align: center;
+                transition: font-size .3s;
+            }
+            .jt {
+                position: absolute;
+                left: 50%;
+                margin-left: -15px;
+                right: 0;
+                bottom: 10px;
+                z-index: 4;
+                display: block;
+                width: 30px;
+                height: 30px;
+                background: url(http://www.doliwang.cn//template/web/image/jt.png);
+                background-size: 30px;
+            }
+            .mask {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 3;
+                opacity: 0;
+                background: #000;
+                transition: opacity .5s;
+            }
+            img {
+                width: 100%;
+                height: 279px;
+                transition: transform .5s;
+            }
+        }
+    }
+    
+    .al {
+        padding-top: 20px;
+    }
+    
+    .hy {
+        margin-top: 15px;
+    }
+    
+    #zcx2 {
+        width: 1320px;
+        margin: 0 auto;
+        li {
+            width: 225px;
+            margin-bottom: 30px;
+            margin-right: 48px;
+            position: relative;
+            &:nth-child(5n) {
+                margin-right: 0;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    
+    .hyt {
+        height: 35px;
+        line-height: 35px;
+        margin-bottom: 10px;
+        li {
+            float: left;
+            padding: 0 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #fff;
+            margin: 0 13px;
+            font-size: 16px;
+            &:hover {
+                color: #000;
+                font-weight: 600;
+                position: relative;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    }
+    
+    .ha {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        text-align: right;
+        margin-top: 10px;
+        margin-right: 30px;
+        font-size: 16px;
+        text-decoration: underline;
+        &:hover {
+            color: #fc4d52;
+        }
+    }
+    
+    .jgti {
+        margin-top: 10px;
+    }
+    
+    .jgtil {
+        height: 50px;
+        line-height: 50px;
+        strong {
+            font-size: 30px;
+            float: left;
+            font-weight: 600;
+        }
+        i {
+            float: left;
+            font-size: 30px;
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url(http://www.doliwang.cn/template/web/image/x.png) no-repeat;
+            background-size: 25px;
+            margin-left: 10px;
+            margin-top: 15px;
+        }
+    }
+    
+    .imo {
+        padding-top: 10px;
+        a {
+            font-size: 16px;
+            color: #999;
+        }
+    }
+    
+    .ip {
+        border: 1px solid #e9e9e9;
+        height: 630px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        .ipd {
+            width: 505px;
+            height: 295px;
+            margin-right: 40px;
+        }
+        .zcx3 {
+            display: block;
+            width: 1400px;
+            padding-top: 20px;
+            li {
+                float: left;
+                width: 225px;
+                margin-bottom: 30px;
+                margin-right: 40px;
+                position: relative;
+                &:hover {
+                    i {
+                        display: block;
+                    }
+                }
+                i {
+                    position: absolute;
+                    right: 6px;
+                    top: 6px;
+                    display: none;
+                    a {
+                        background: #f00;
+                        padding: 2px 15px;
+                        color: #fff;
+                        border-radius: 6px;
+                        font-size: 14px;
+                    }
+                }
+                .hp {
+                    display: block;
+                }
+                span {
+                    display: block;
+                }
+                .zcp {
+                    width: 225px;
+                    height: 225px;
+                    overflow: hidden;
+                    border: 1px solid #eee;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .kj {
+                    line-height: 26px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                em {
+                    font-size: 15px;
+                    font-weight: 700;
+                    font-family: Arial;
+                    color: #fc4d52;
+                    font-style: normal;
+                }
+                strong {
+                    display: block;
+                    font-size: 14px;
+                    padding: 3px 0;
+                    text-align: center;
+                    color: #333;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .ui3 {
+            padding: 15px;
+        }
+    }
+    
+    .fb {
+        border: 1px solid #eee;
+        height: 580px;
+        .fbl {
+            width: 260px;
+            height: 580px;
+            border-right: 1px solid #ddd;
+            strong {
+                display: block;
+                font-size: 18px;
+                text-align: center;
+                padding: 20px;
+                position: relative;
+                font-weight: 500;
+                &::after {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 75px;
+                    right: 75px;
+                    height: 1px;
+                    content: '';
+                    -webkit-transform: scaleY(.5);
+                    transform: scaleY(.5);
+                    background-color: #333;
+                }
+            }
+        }
+        .fbp {
+            display: block;
+            width: 260px;
+            height: 400px;
+            img {
+                width: 260px;
+                height: 400px;
+            }
+        }
+    }
+    
+    .tjf {
+        li {
+            width: 33%;
+            float: left;
+            text-align: center;
+            padding: 10px 0;
+            a {
+                font-size: 14px;
+                color: #666;
+                display: block;
+                text-align: center;
+                padding: 5px 0;
+                &:hover {
+                    background: #f00;
+                    color: #fff;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    
+    .fbr {
+        width: 1030px;
+        height: 580px;
+    }
+    
+    .zcx4 {
+        display: block;
+        width: 1060px;
+        padding: 10px;
+        li {
+            float: left;
+            width: 215px;
+            margin-bottom: 15px;
+            margin-right: 45px;
+            position: relative;
+            i {
+                display: block;
+                position: absolute;
+                right: 6px;
+                top: 6px;
+                display: none;
+                a {
+                    background: #f00;
+                    padding: 2px 15px;
+                    color: #fff;
+                    border-radius: 6px;
+                }
+            }
+            span {
+                display: block;
+            }
+            .zcp {
+                width: 215px;
+                height: 215px;
+                overflow: hidden;
+                border: 1px solid #eee;
+                img {
+                    width: 100%;
+                }
+            }
+            .kj {
+                line-height: 26px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            em {
+                font-size: 15px;
+                font-weight: 700;
+                font-family: Arial;
+                color: #fc4d52;
+                font-style: normal;
+            }
+            strong {
+                display: block;
+                font-size: 14px;
+                padding: 3px 0;
+                text-align: center;
+                color: #333;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+    
+    // 尾部
+    .co {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+    
+    .col {
+        width: 370px;
+        text-align: center;
+        min-height: 300px;
+        span {
+            display: block;
+        }
+        .cot {
+            padding-top: 30px;
+            padding-bottom: 40px;
+            strong {
+                display: block;
+                color: #333;
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            i {
+                display: block;
+                color: #c9c9c9;
+            }
+        }
+        .ikf {
+            a {
+                margin: 0 10px;
+            }
+        }
+    }
+    
+    .cx {
+        height: 160px;
+        width: 1px;
+        border-right: 2px solid #d8d8d8;
+        margin-top: 80px;
+    }
+    
+    .com {
+        width: 320px;
+        padding: 0 110px;
+        text-align: center;
+        span {
+            display: block;
+        }
+        .cot {
+            padding-top: 30px;
+            padding-bottom: 40px;
+            strong {
+                display: block;
+                color: #333;
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            i {
+                display: block;
+                color: #c9c9c9;
+            }
+        }
+    }
+    
+    .coma {
+        dl {
+            float: left;
+            width: 33%;
+            dt {
+                font-size: 15px;
+                font-weight: 600;
+                padding-bottom: 10px;
+            }
+            dd {
+                font-size: 14px;
+                line-height: 26px;
+                color: #666;
+            }
+        }
+    }
+    
+    .cor {
+        text-align: center;
+        width: 300px;
+        span {
+            display: block;
+        }
+        .cot {
+            padding-top: 30px;
+            padding-bottom: 40px;
+            strong {
+                display: block;
+                color: #333;
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            i {
+                display: block;
+                color: #c9c9c9;
+            }
+        }
+    }
+    
+    .bv {
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        a {
+            margin: 0 10px;
+            color: #666;
+        }
+    }
+    
+    .yl {
+        text-align: center;
+        padding: 10px 0;
+        a {
+            margin: 0 10px;
+        }
+    }
+    
+    .bq {
+        font-size: 12px;
+        color: #333;
+        text-align: center;
+        padding: 20px 0;
+        line-height: 26px;
+    }
+    
+    // 楼梯
+    .lift-nav {
+        position: fixed;
+        top: 110px;
+        left: 50%;
+        margin-left: -710px;
+        // display: none;
+        li {
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            color: #fff;
+            padding: 3px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            span {
+                display: block;
+                visibility: hidden;
+                font-size: 13px;
+            }
+        }
+        .a1 {
+            background: url(http://www.doliwang.cn/template/web/image/l1.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a2 {
+            background: url(http://www.doliwang.cn/template/web/image/l2.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a3 {
+            background: url(http://www.doliwang.cn/template/web/image/l3.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a4 {
+            background: url(http://www.doliwang.cn/template/web/image/l4.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a5 {
+            background: url(http://www.doliwang.cn/template/web/image/l5.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a6 {
+            background: url(http://www.doliwang.cn/template/web/image/l6.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a7 {
+            background: url(http://www.doliwang.cn/template/web/image/l7.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a8 {
+            background: url(http://www.doliwang.cn/template/web/image/l8.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a9 {
+            background: url(http://www.doliwang.cn/template/web/image/l9.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a10 {
+            background: url(http://www.doliwang.cn/template/web/image/l10.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a11 {
+            background: url(http://www.doliwang.cn/template/web/image/l11.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a12 {
+            background: url(http://www.doliwang.cn/template/web/image/l12.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .a13 {
+            background: url(http://www.doliwang.cn/template/web/image/l13.png) no-repeat center #e6e6e6;
+            display: block;
+        }
+        .hp {
+            display: block;
+            width: 35px;
+            height: 35px;
+            overflow: hidden;
+            line-height: 100px;
+            background: url(http://www.doliwang.cn/template/web/image/top.jpg) no-repeat center #e6e6e6;
+            padding: 3px;
+        }
+        .current {
+            background: #bc4038;
+            display: block;
+            span {
+                display: block;
+                visibility: visible;
+            }
+        }
+    }

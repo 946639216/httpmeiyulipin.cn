@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员注册</title>
+    <link rel="stylesheet" href="./css/registry.css">
+    <script src="./script/registry-module.js" type="module"></script>
+</head>
+
+<body>
+    <div class="lohead">
+        <span class="fl">欢迎注册会员</span>
+        <span class="fr">
+            <a href="/">网站首页</a>
+        </span>
+    </div>
+    <div class="m">
+        <div class="mh cl">
+            <strong>会员注册</strong>
+            <span>已有账号？
+                <a href="login.html">立即登录</a>
+            </span>
+
+        </div>
+        <div class="ct cl">
+            <div class="ctl fl"><img src="http://meiyulipin.cn/c/user/css2020/images/480.jpg"></div>
+            <div class="ctr fr">
+                <div class="zmd">
+                    <div class="mda"><span>欢迎您的到来，10秒注册成功</span></div>
+                    <!-- <form action="http://10.31.165.44/httpmeiyulipin.cn/php/reg.php" method="POST" id="step_1"> -->
+                    <form action="http://192.168.1.107/httpmeiyulipin.cn/php/reg.php" method="POST" id="step_1">
+                        <div class="mdb">
+                            <input type="text" value="" class="zbox" name="username" id="username" placeholder="用户名/手机号"><span id="userspan"></span>
+                        </div>
+                        <div class="mdc">
+                            <input type="password" value="" class="zbox" name="password" id="password" placeholder="密码"><span id="passspan"></span>
+                        </div>
+                        <div class="mdc">
+                            <input type="password" value="" class="zbox" name="repass" id="repass" placeholder="再次输入密码"><span class="span"></span>
+                        </div>
+                        <div class="tong">
+                            <label><input type="checkbox" class="checkbox" id="xycheckbox" name="xycheckbox" value="1"> 我已阅读并同意</label><a href="javascript:" id="popwin">《懂礼网用户服务协议》</a>
+                        </div>
+                        <div class="mdd">
+                            <input type="submit" class="regBtn" name="submit" id="step1" value="注册">
+                        </div>
+                    </form>
+                    <div class="tong ce">
+                        已有懂礼网账号？<a href="login.html">立即登陆</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot"></div>
+</body>
+
+</html>

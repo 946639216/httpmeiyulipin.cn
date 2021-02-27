@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部商品</title>
+    <!-- 引入分页css -->
+    <link rel="stylesheet" href="./css/list.css">
+    <script src="./script/list-module.js" type="module"></script>
+</head>
+
+<body>
+    <div class="top cl">
+        <div class="lo pr w cl">
+            <div class="logo fl">
+                <a href="index.html">
+                    <img src="http://meiyulipin.cn/template/web/image/logo.png">
+                </a>
+            </div>
+            <div class="logr fl"><img src="http://meiyulipin.cn/userfiles/image/20201223/1608722477767600.jpg"></div>
+            <div class="del fl" id="login"><a href="./login.html">会员登陆</a><a href="./registry.html">注册会员</a></div>
+            <div class="del fl" id="admin">
+                <a href="" class="red"><i>+</i><span></span><b>会员中心</b></a>
+                <a href="javascript:;" class="quit">退出</a>
+            </div>
+            <div class="loc fr">
+                <div class="search cl">
+                    <input type="text" id="keyword" class="text fl" placeholder="请输入关键字">
+                    <!-- <ul class="wordlist"></ul> -->
+                    <input type="submit" id="tosearch" class="button fr FontBgColor cso" value="搜索">
+                </div>
+            </div>
+            <div class="lob fr"><a href="./cartlist.html" id="buycars">0</a></div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="w cl">
+            <div class="fl" id="box1">
+                <h2><a href="./list.html">全部商品</a></h2>
+                <!-- <div class="tab">
+                    <a href="" class="active">
+                        <p>物超所值</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>行业精选</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>商务办公</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>广告促销</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>家居家纺</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>杯壶茶具</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>电子电器</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>皮具箱包</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>食品礼包</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>工艺精选</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>新春专区</p>
+                        <span>></span>
+                    </a>
+                    <a href="">
+                        <p>虚拟卡券</p>
+                        <span>></span>
+                    </a>
+                    <div class="alldiv">
+                        <div class="item">
+                            <ul class="mcu fl">
+                                <li><a href="">政府机关</a></li>
+                                <li><a href="">政府机关</a></li>
+                                <li><a href="">政府机关</a></li>
+                                <li><a href="">政府机关</a></li>
+                                <li><a href="">政府机关</a></li>
+                                <li><a href="">政府机关</a></li>
+                                <li><a href="">政府机关</a></li>
+                            </ul>
+                            <div class="mcr fr">
+                                <a href=""><img src="http://www.doliwang.cn/userfiles/image/20201216/1608101864114671.jpg"></a>
+                                <a href=""><img src="http://www.doliwang.cn/userfiles/image/20201216/1608101864114671.jpg"></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                        </div>
+                        <div class="item">
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                        <div class="item">
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                        <div class="item">
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                        <div class="item">
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                        <div class="item">
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                        <div class="item">
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                        <div class="item">
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                        <div class="item">
+
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+
+                        </div>
+                        <div class="item">
+
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+
+                        </div>
+                        <div class="item">
+
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                            <a href=""><img src="http://www.doliwang.cn/userfiles/image/20210102/1609582159103839.jpg"></a>
+
+                        </div>
+                    </div>
+
+                </div> -->
+            </div>
+            <div class="navlist">
+                <a href="">首页</a>
+                <a href="">礼品资讯</a>
+                <a href="">品牌中心</a>
+                <a href="">经典案例</a>
+                <a href="">供应商入驻</a>
+                <a href="">礼品建站</a>
+                <a href="">联系我们</a>
+                <a href="">小程序</a>
+                <a href="">视频</a>
+            </div>
+        </div>
+    </div>
+    <div class="w">
+        <div class="spric">价格：
+            <span class="moren"></span>
+            <span class="sort bs"><span>
+        </div>
+        <div class="list">
+            <ul class="pu cl">
+
+            </ul>
+        </div>
+        <!-- 加载分页的结构 ：page-->
+        <div class="pagelist">
+            <div class="m-style page">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

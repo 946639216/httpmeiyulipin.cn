@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cm wix">
+        <div class="cml fl">
+            <div class="ant-grid-1000 ant-bc">
+                <div class="zoom-box">
+                    <div class="piczoom"><img src="/userfiles/image/20210119/1611028352958274.jpg" width="400" height="400" alt=""></div>
+                    <div class="piczoom-list">
+                        <div class="piczoom-item">
+                            <ul class="ant-clearfix" id="picarr">
+                                <li data-url="/userfiles/image/20210119/1611028352387630.png|/userfiles/image/20210119/1611028352387630.png" class=""><img src="/userfiles/image/20210119/1611028352387630.png" width="50" height="50" alt=""></li>
+                                <li data-url="/userfiles/image/20210119/1611028352958274.jpg|/userfiles/image/20210119/1611028352958274.jpg" class="current"><img src="/userfiles/image/20210119/1611028352958274.jpg" width="50" height="50" alt=""></li>
+                                <li data-url="/userfiles/image/20210119/1611028352539704.jpg|/userfiles/image/20210119/1611028352539704.jpg" class=""><img src="/userfiles/image/20210119/1611028352539704.jpg" width="50" height="50" alt=""></li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="z-prev-btn" style="display: none;"></a>
+                        <a href="javascript:;" class="z-next-btn" style="display: none;"></a> <span href="javascript:;" class="un-z-prev-btn" style="display: inline;"></span> <span href="javascript:;" class="un-z-next-btn" style="display: inline;"></span> </div>
+                    <div class="piczoom-large" style="width: 350px; height: 350px; display: none;"><img src="/userfiles/image/20210119/1611028352958274.jpg" width="700" height="700" alt="" style="position: absolute; top: -350px; left: 0px;"></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var picarr = "/userfiles/image/20210119/1611028352387630.png,/userfiles/image/20210119/1611028352958274.jpg,/userfiles/image/20210119/1611028352539704.jpg,";
+                if (picarr.length > 3) {
+                    var ssaa = picarr.split(",");
+                    for (i = 0; i < ssaa.length; i++) {
+                        if (ssaa[i] != '') {
+                            document.getElementById("picarr").innerHTML += ' <li data-url="' + ssaa[i] + '|' + ssaa[i] + '"><img src="' + ssaa[i] + '" width="50" height="50" alt="" /></li> ';
+                        }
+                    }
+                }
+                $('.zoom-box').picZoom({
+                    smallPanel: '.piczoom',
+                    largePanel: '.piczoom-large',
+                    thumbPanel: '.piczoom-list',
+                    ratio: 0.5,
+                    prevButton: {
+                        enable: '.z-prev-btn',
+                        disable: '.un-z-prev-btn'
+                    },
+                    nextButton: {
+                        enable: '.z-next-btn',
+                        disable: '.un-z-next-btn'
+                    },
+                    triggerClass: 'current'
+                });
+            </script>
+        </div>
+        <div class="cmr fr"> <strong class="ti">良品铺子-小野喵欢乐搭配包	</strong>
+            <div class="lb cl a5"><i>市场价：</i><em><b class="jg fl" id="ggjgs">98.00</b></em></div>
+            <div class="lb cl a1"> <i>价格：</i><em><b class="jg fl" id="ggjg">86.00</b></em></div>
+            <div class="lb cl a3" id="userprice"> <i>会员价：</i><em><span>会员特价专享，您可以快速<a href="/c/user/reg.php">注册</a>或者<a href="/c/user/login.php">登录</a>系统</span><b class="jg fl hide" id="ggjgz">86.00</b></em></div>
+            <div class="gxcc cl">
+                <dt class="ggt">规格：</dt>
+                <dd class="gg cl" id="gglei">
+                    <div class="buycarbox hide" id="ggboxs" style="display: block;">
+                        <div class="ggbox">
+                            <div class="ggs gs cl">
+                                <text data-id="0" data-index="0" class="ggtext ggsck ggon">默认</text>
+                            </div>
+                            <div class="ggs gx cl">
+                                <div data-id="0" data-index="0" class="ggtext ggck ggon">默认</div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </div>
+            <div class="lb cl a2"> <i>数量：</i> <em>
+        <dd>
+        <div class="sdd"> <span class="sub fl" id="subBtn" onclick="chgnum(-1,'1')"></span>
+        <input id="buyCount" name="buyCount" class="inp_num fl" type="text" data-num="" value="" maxlength="3">
+        <span class="plus mr10 fl" id="plusBtn" onclick="chgnum(1,'1')"></span> </div>
+        <div class="fl kc">库存 <span id="ggkc">999999</span></div>
+        </dd>
+        </em> </div>
+            <div class="lb cl a6"><i>货号：</i><em><b>MY-HHL-L5-08</b></em></div>
+            <div class="gm"><a href="javascript:pgo('2','34761','buy',0)" class="lij">立即购买</a><a href="javascript:pgo('2','34761','gwc',0)" class="jr">加入购物车</a><a href="" class="huo"><span>获取样品：<br>
+        4009686822</span></a><a href="javascript:pgo('2','34761','ppt')" class="pt pr">一键生成PPT</a></div>
+            <div class="pgy">
+                <span class="gyt">本供应商联系方式：</span>
+                <span id="gysinfo">钻石会员登录后可看，没有会员？马上<a href="/c/user/reg.php">注册</a>，或者电话联系：4009686822 </span>
+            </div>
+        </div>
+        <div class="c"></div>
+    </div>
+</body>
+
+</html>

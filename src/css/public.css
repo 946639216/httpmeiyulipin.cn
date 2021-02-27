@@ -1,0 +1,142 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #000; }
+
+b {
+  font-weight: 400; }
+
+i,
+em {
+  font-style: normal; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.top {
+  background: #e6e6e6;
+  height: 100px;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 1px 5px 10px rgba(204, 204, 204, 0.4);
+  overflow: hidden; }
+
+.w {
+  width: 1320px;
+  margin: 0 auto;
+  /* background-color: #f00; */ }
+
+.logo {
+  padding-top: 10px;
+  width: 165px;
+  text-align: center; }
+
+.del {
+  margin-top: 45px;
+  width: 230px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: 10px;
+  background: url(http://meiyulipin.cn/template/web/image/go2.jpg) no-repeat;
+  padding-left: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000; }
+  .del a {
+    margin-right: 15px;
+    float: left; }
+  .del i {
+    float: left;
+    font-style: normal;
+    color: #f00; }
+  .del span {
+    float: left;
+    color: #f00;
+    width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 5px; }
+  .del .red:hover {
+    color: #f00; }
+  .del .quit:hover {
+    color: #f00; }
+
+/*搜索框 */
+.loc {
+  width: 240px;
+  margin-top: 40px; }
+
+.search {
+  width: 270px;
+  height: 37px;
+  line-height: 37px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-right: 0;
+  border: 2px solid #000;
+  float: right;
+  position: relative; }
+  .search .text {
+    width: 56%;
+    line-height: 33px;
+    font-size: 14px;
+    padding: 0 4px 0 45px;
+    border: 1px solid transparent;
+    color: #666;
+    background: url(http://meiyulipin.cn/template/web/image/fd.jpg) no-repeat 15px 50%; }
+  .search #keyword {
+    height: 35px;
+    border: 0;
+    outline: 0; }
+  .search #tosearch {
+    width: 22%;
+    height: 39px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    background-color: #000;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    margin-right: 0; }
+
+/* 搜索按钮 */
+/* 购物车 */
+.lob {
+  width: 110px;
+  padding-top: 45px; }
+  .lob a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    background: url(http://meiyulipin.cn/template/web/image/go.jpg) no-repeat;
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000; }
+
+#admin {
+  display: none; }
+
+#login {
+  display: block; }
+
+.header .navlist {
+  width: 100%;
+  height: 50px;
+  /* background-color: aqua; */
+  list-style: none;
+  margin-top: 10px; }
+
+/*# sourceMappingURL=public.css.map */

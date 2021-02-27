@@ -1,0 +1,206 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.cl:after {
+  content: "\0020";
+  line-height: 0;
+  font-size: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+/* 顶部 */
+.lohead {
+  background-color: #1c222e;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #bdbcc1;
+}
+
+.lohead span {
+  margin: 0 15px;
+}
+
+.lohead span a {
+  color: #bdbcc1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 中心内容 */
+.m {
+  min-height: 600px;
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.mh {
+  padding: 20px 0;
+  color: #2a344f;
+}
+
+.mh strong {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.mh span {
+  float: right;
+  line-height: 50px;
+  font-size: 18px;
+}
+
+.mh span a {
+  color: #1d5af2 !important;
+}
+
+/* 表单部分 */
+.ctr {
+  width: 700px;
+}
+
+.zmd {
+  width: 330px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+.zmd span {
+  font-size: 16px;
+}
+
+.zmd div {
+  padding: 12px 0;
+}
+
+.mda {
+  color: #000;
+}
+
+/* 给input设置样式 */
+input.zbox {
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 20px;
+  border: 1px solid #e3e2e7;
+  border-radius: 4px;
+  outline-color: #1d5af2;
+}
+
+/* 同意条款 */
+.tong {
+  position: relative;
+  font-size: 12px;
+}
+
+.tong a {
+  color: #1d5af2;
+}
+
+input.checkbox {
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  vertical-align: middle;
+  position: relative;
+  border: rgba(0, 0, 0, 0.3);
+  margin-top: -3px;
+}
+
+/* 按钮 */
+input.regBtn {
+  border: 0;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-image: linear-gradient(90deg, #ffaa00 17%, #f76b1c 100%);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* 登录 */
+.ce {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* 尾部 */
+.foot {
+  min-height: 180px;
+  background: #26344b;
+}
+
+.tong .fl .red {
+  color: #333;
+}
+
+.tong .fl .red:hover {
+  color: #f00;
+}
+
+.mdb {
+  position: relative;
+}
+
+.mdb i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(http://meiyulipin.cn/c/user/css2020/images/m1.png) no-repeat;
+  position: absolute;
+  left: 15px;
+  top: 22px;
+}
+
+.mdb input {
+  text-indent: 20px;
+}
+
+.mdc {
+  position: relative;
+}
+
+.mdc i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(http://meiyulipin.cn/c/user/css2020/images/m2.png) no-repeat;
+  position: absolute;
+  left: 15px;
+  top: 22px;
+}
+
+.mdc input {
+  text-indent: 20px;
+}

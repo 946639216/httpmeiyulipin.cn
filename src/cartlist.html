@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            border: none;
+        }
+        
+        i {
+            font-style: normal;
+        }
+        
+        input,
+        select,
+        textarea {
+            outline: none;
+            border: none;
+            background: none;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            background-image: -webkit-linear-gradient(transparent, transparent);
+            background-image: linear-gradient(transparent, transparent);
+            font-family: "Helvetica", "Arial";
+        }
+        
+        textarea {
+            resize: none;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .head {
+            background: #e6e6e6;
+            height: 120px;
+            overflow: hidden;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 1px 5px 10px rgba(204, 204, 204, 0.4);
+        }
+        
+        .logo {
+            padding-top: 10px;
+            width: 165px;
+        }
+        
+        .logo a {
+            display: block;
+            background: url(http://www.doliwang.cn/template/web/image/logo.png) no-repeat;
+            width: 63px;
+            height: 89px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .logr {
+            margin-left: 30px;
+            line-height: 160px;
+            font-size: 26px;
+        }
+        
+        .fl {
+            float: left;
+        }
+        
+        .ho {
+            line-height: 180px;
+        }
+        
+        .fr {
+            float: right;
+        }
+        
+        .ho a {
+            font-size: 14px;
+            margin-left: 15px;
+            color: #777;
+        }
+        
+        .ho a:hover {
+            text-decoration: underline;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: grey;
+        }
+        
+        .gdh1 {
+            background-position: 0px 0px;
+        }
+        
+        .gdh {
+            height: 25px;
+            line-height: 25px;
+            background-image: url(http://www.doliwang.cn/template/web/buy/gbg.jpg);
+            overflow: hidden;
+        }
+        
+        .gdh ul {
+            width: 1000px;
+        }
+        
+        li {
+            list-style: none;
+            display: list-item;
+        }
+        
+        .gdh ul li.on {
+            color: #ff664b;
+        }
+        
+        .gdh ul li {
+            width: 250px;
+            text-align: center;
+            float: left;
+        }
+        
+        .cl:after {
+            content: "\0020";
+            line-height: 0;
+            font-size: 0;
+            display: block;
+            clear: both;
+            visibility: hidden;
+            overflow: hidden;
+        }
+        
+        .cart {
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+        
+        .cart-top-left {
+            height: 36px;
+            padding-top: 15px;
+            line-height: 21px;
+            border-bottom: 2px solid #c90809;
+        }
+        
+        .cart-top-left .MyCart {
+            font-size: 18px;
+            padding-right: 10px;
+            font-weight: bold;
+            color: #f00;
+            font-family: 微软雅黑;
+        }
+        
+        .cart-top-left .f12 {
+            font-size: 12px;
+            float: right;
+        }
+        
+        .cart-top-left li {
+            float: left;
+            height: 21px;
+        }
+        
+        .cart-wrap {
+            background: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .cart-thead {
+            height: 32px;
+            line-height: 32px;
+            margin: 0 0 10px;
+            padding: 5px 0;
+            background: #f3f3f3;
+            border: 1px solid #e9e9e9;
+            border-top: 0;
+        }
+        
+        .cart-col {
+            float: left;
+        }
+        
+        .t-checkbox {
+            height: 18px;
+            line-height: 18px;
+            padding-top: 7px;
+            width: 122px;
+            padding-left: 11px;
+        }
+        
+        .cart-checkbox input {
+            margin-right: 5px;
+        }
+        
+        .t-goods {
+            width: 208px;
+        }
+        
+        .t-props {
+            width: 140px;
+            height: 32px;
+            padding: 0 20px;
+            text-align: right;
+        }
+        
+        .t-prices {
+            width: 120px;
+            padding-right: 40px;
+            text-align: right;
+            height: 32px;
+        }
+        
+        .t-quantity {
+            text-align: center;
+            width: 80px;
+        }
+        
+        .t-sum {
+            width: 100px;
+            padding-right: 40px;
+            text-align: right;
+        }
+        
+        .cart-item-list {
+            margin-bottom: 20px;
+        }
+        
+        .cart-item-list .shop {
+            height: 30px;
+            line-height: 30px;
+            padding-left: 11px;
+            font-weight: 700;
+        }
+        
+        .shop .cart-checkbox {
+            float: left;
+        }
+        
+        .shop .shop-info {
+            float: left;
+            width: 538px;
+        }
+        
+        .shop .shop-info a {
+            display: block;
+            margin-top: 6px;
+            width: 54px;
+            height: 18px;
+        }
+        
+        .shop .shop-ex {
+            float: right;
+            font-weight: 400;
+        }
+        
+        .shop .shop-ex span {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin: -3px 0 0 5px;
+            vertical-align: middle;
+        }
+        
+        .item-list {
+            border-style: solid;
+            border-width: 2px 1px 1px;
+            border-color: #aaa #f1f1f1 #f1f1f1;
+            background: #fff;
+        }
+        
+        .item-head {
+            height: 26px;
+            padding: 5px 10px;
+            overflow: hidden;
+        }
+        
+        .item-head .header-left {
+            width: 750px;
+            line-height: 26px;
+            float: left;
+        }
+        
+        .header-left-p1 {
+            color: #666;
+        }
+        
+        .header-left-p1 span {
+            margin: 0 10px 0 5px;
+            padding: 1px 10px;
+            border: 1px solid #f48719;
+            background: #f48719;
+            color: white;
+            position: relative;
+        }
+        
+        .header-left-p1 span b {
+            position: absolute;
+            display: block;
+            width: 5px;
+            height: 6px;
+            left: -1px;
+            bottom: -5px;
+        }
+        
+        .header-left-p2 {
+            margin-left: 20px;
+            padding: 0 5px;
+            border-radius: 2px;
+            background: #e74649;
+            color: white;
+            display: inline-block;
+            height: 19px;
+            line-height: 19px;
+        }
+        
+        .header-price {
+            width: 100px;
+            float: left;
+            text-align: right;
+        }
+        
+        .goods-item {
+            padding: 0 10px 0 40px;
+            position: relative;
+        }
+        
+        .goods-item-sele {
+            background: #fff4e8;
+        }
+        
+        .goods-info {
+            border-top: 1px solid #f1f1f1;
+            overflow: hidden;
+        }
+        
+        .cell {
+            float: left;
+        }
+        
+        .b-checkbox {
+            position: absolute;
+            left: 10px;
+            width: 30px;
+            height: 20px;
+            padding: 15px 0 10px 0;
+        }
+        
+        .goods-item .cart-checkbox input {
+            position: absolute;
+            z-index: 2;
+        }
+        
+        .cart-checkbox .line-circle {
+            position: absolute;
+            left: 2px;
+            top: -5px;
+            display: block;
+            width: 7px;
+            height: 29px;
+        }
+        
+        .goods-item .b-goods {
+            width: 300px;
+            padding: 15px 0 10px 0;
+        }
+        
+        .b-goods .goods-name .goods-pic {
+            width: 82px;
+            height: 82px;
+            margin-right: 10px;
+            border: 1px solid #eee;
+            float: left;
+        }
+        
+        .b-goods .goods-name .goods-pic img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .goods-d-info {
+            height: 40px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+        
+        .goods-ex {
+            margin-top: 2px;
+        }
+        
+        .goods-ex .promise {
+            margin: 0 10px 0 0;
+            display: block;
+            min-height: 18px;
+            line-height: 18px;
+            margin-bottom: 2px;
+        }
+        
+        .promise i {
+            display: inline-block;
+            width: 17px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        
+        .promise a {
+            display: inline-block;
+            padding: 1px 4px 0 7px;
+            height: 15px;
+            line-height: 15px;
+            vertical-align: middle;
+        }
+        
+        .b-props {
+            height: 80px;
+            padding: 15px 10px 0 10px;
+            overflow: hidden;
+        }
+        
+        .b-props .prop-text {
+            width: 160px;
+        }
+        
+        .b-price {
+            width: 120px;
+            padding: 15px 40px 10px 0;
+            overflow: hidden;
+            text-align: right;
+            margin-top: 20px;
+        }
+        
+        .b-price strong {
+            font-weight: 400;
+            font-size: 14px;
+        }
+        
+        .b-price .sales-promotion {
+            display: block;
+            width: 53px;
+            border: 1px solid #f9d2d3;
+            color: #e4393c;
+            height: 18px;
+            text-align: left;
+            line-height: 17px;
+            padding: 0 15px 0 8px;
+            cursor: pointer;
+            background: #fff;
+            text-decoration: none;
+            float: right;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .sales-promotion b {
+            display: inline-block;
+            width: 7px;
+            height: 4px;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+        }
+        
+        .b-quantity {
+            width: 80px;
+            padding: 15px 0 10px;
+        }
+        
+        .b-quantity .quantity-form {
+            position: relative;
+            overflow: hidden;
+            height: 20px;
+            border: 1px solid #cacbcb;
+            margin-top: 25px;
+        }
+        
+        .quantity-form a {
+            display: block;
+            height: 18px;
+            line-height: 18px;
+            padding: 1px 0;
+            width: 16px;
+            text-align: center;
+            color: #666;
+            margin: 0;
+            background: #fff;
+            float: left;
+        }
+        
+        .quantity-form .quantity-down {
+            border-right: 1px solid #cacbcb;
+        }
+        
+        .quantity-form .quantity-add {
+            border-left: 1px solid #cacbcb;
+        }
+        
+        .quantity-form input {
+            width: 44px;
+            height: 22px;
+            float: left;
+            text-align: center;
+            background: white;
+        }
+        
+        .quantity-text {
+            text-align: center;
+            height: 20px;
+            line-height: 20px;
+        }
+        
+        .b-sum {
+            width: 100px;
+            height: 20px;
+            padding: 40px 30px 15px 10px;
+            text-align: right;
+            font-size: 18px;
+            color: red;
+        }
+        /* .b-sum strong {
+            color: #333;
+            font-weight: 700;
+            font-size: 14px;
+        } */
+        
+        .b-action {
+            padding: 42px 0 10px 0;
+        }
+        
+        .b-action a {
+            display: block;
+            width: 75px;
+            height: 20px;
+            color: blue;
+            font-size: 14px;
+        }
+        
+        #cart-floatbar {
+            width: 1198px;
+            height: 50px;
+            border: 1px solid #f0f0f0;
+            background: #fff;
+            position: relative;
+        }
+        
+        .select-all {
+            float: left;
+            height: 18px;
+            line-height: 18px;
+            padding: 16px 0 16px 9px;
+        }
+        
+        .operation {
+            float: left;
+            height: 50px;
+            width: 310px;
+            line-height: 50px;
+        }
+        
+        .operation a {
+            margin-left: 20px;
+            display: inline-block;
+            height: 50px;
+        }
+        
+        .toolbar-right {
+            overflow: hidden;
+        }
+        
+        .toolbar-right .btn-area {
+            float: right;
+        }
+        
+        .btn-area a {
+            display: block;
+            width: 96px;
+            height: 52px;
+        }
+        
+        .price-sum {
+            float: right;
+            height: 43px;
+            line-height: 20px;
+            margin: 7px 20px 0 10px;
+            color: #666;
+            width: 220px;
+            position: relative;
+        }
+        
+        .price-sum span {
+            width: 200px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+        }
+        
+        .price-sum .txt {
+            position: absolute;
+            left: 0;
+        }
+        
+        .price-sum .totalprice {
+            font-size: 18px;
+            color: #e4393c;
+            font-weight: 700;
+            position: absolute;
+            right: -160px;
+        }
+        
+        .amount-sum {
+            float: right;
+            color: #999;
+            height: 44px;
+            line-height: 20px;
+            margin: 15px 0 0;
+            cursor: pointer;
+        }
+        
+        .amount-sum em {
+            color: #e4393c;
+            font-family: verdana;
+            font-weight: 700;
+            margin: 0 3px;
+        }
+        
+        .amount-sum b {
+            display: inline-block;
+            width: 9px;
+            height: 5px;
+            vertical-align: middle;
+        }
+        
+        .tab .mt {
+            margin-bottom: 10px;
+            height: 23px;
+            line-height: 23px;
+        }
+        
+        .mt .tab-item {
+            display: inline-block;
+            height: 18px;
+            margin-right: 35px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #fff;
+        }
+        
+        .mt .curr {
+            color: #e4393c;
+            font-weight: 700;
+            border-color: #e4393c;
+        }
+        
+        .mc {
+            height: 326px;
+            position: relative;
+        }
+        
+        .mc .guess-products {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .mc .guess-products .goods-list-tab {
+            position: absolute;
+            right: 0;
+            top: -26px;
+            width: 60px;
+        }
+        
+        .goods-list-tab .s-item {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-left: 3px;
+            overflow: hidden;
+            background: #aaa;
+            border-radius: 4px;
+        }
+        
+        .goods-list-tab .tab-selected {
+            width: 26px;
+            background: #e4393c;
+        }
+        
+        .guess-products .panel-main {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .guess-products .panel-main .goods-list {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        
+        .goods-list ul {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        
+        .goods-list ul li {
+            float: left;
+        }
+        
+        .goods-list ul li .goodsinfo {
+            position: relative;
+            width: 206px;
+            padding: 20px;
+            background: #fff;
+            margin: -1px 0 0 -1px;
+            border: 1px dashed #cacaca;
+            overflow: hidden;
+        }
+        
+        .goods-list ul li .goodsinfo:hover {
+            z-index: 2;
+            border: 1px solid #E4393C;
+        }
+        
+        .p-img {
+            width: 160px;
+            margin: 0 auto;
+        }
+        
+        .goodsinfo .p-img img {
+            vertical-align: middle;
+            width: 160px;
+            height: 160px;
+        }
+        
+        .p-name {
+            height: 36px;
+            line-height: 18px;
+            margin: 5px 0;
+            overflow: hidden;
+        }
+        
+        .p-price {
+            width: 100%;
+            margin: 5px 0 2px;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .p-price strong {
+            font-size: 14px;
+            color: #d91f20;
+            font-family: verdana;
+            font-weight: 400;
+        }
+        
+        .p-btn {
+            margin: 10px 0 0;
+            text-align: center;
+        }
+        
+        .p-btn a {
+            display: inline-block;
+            height: 28px;
+            line-height: 28px;
+            padding: 0 20px;
+            border: 1px solid #999;
+            color: #666;
+            text-align: center;
+            border-radius: 3px;
+        }
+        
+        .p-btn a:hover {
+            border: 1px solid #E4393C;
+            background: #E4393C;
+            color: white;
+        }
+        
+        .p-btn b {
+            display: inline-block;
+            height: 18px;
+            width: 18px;
+            margin-right: 5px;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+        
+        .favorite-products {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        
+        .favorite-products .favorite-products-main {
+            margin-top: 10px;
+            text-align: center;
+            line-height: 326px;
+        }
+        
+        .history-products {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        
+        .slider-page-btn {
+            display: none;
+        }
+        
+        .slider-page-btn a {
+            position: absolute;
+            display: block;
+            top: 50%;
+            margin-top: -31px;
+            z-index: 3;
+            display: block;
+            width: 28px;
+            height: 62px;
+            line-height: 62px;
+            background: gray;
+            background: rgba(0, 0, 0, .2);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#32000000, endColorstr=#32000000);
+            color: #fff;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 400;
+            font-family: simsun;
+        }
+        
+        .left-btn {
+            left: 0;
+        }
+        
+        .right-btn {
+            right: 0;
+        }
+    </style>
+    <script src="./script/cartlist-module.js" type="module"></script>
+</head>
+
+<body>
+    <div class="head">
+        <div class="lo pr w cl">
+            <div class="logo fl">
+                <a href="./index.html"></a>
+            </div>
+            <div class="logr fl">购物车</div>
+
+            <div class="ho fr"><a href="/">网站首页</a><a href="/dlist-2-0-0-1.html">全部产品</a><a href="/c/user/">会员中心</a></div>
+
+        </div>
+    </div>
+    <table width="1186" border="0">
+        <tbody>
+            <tr>
+                <td id="user_log"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="container" class="cart">
+        <div class="w">
+            <!--全部商品哪一行-->
+            <div class="gdh gdh1">
+                <ul>
+                    <li class="on">1. 查看购物车</li>
+                    <li>2. 确认订单信息</li>
+                    <li>3. 支付</li>
+                    <li>4. 下订单完成</li>
+                </ul>
+            </div>
+            <div class="cart-top" style="display: block;">
+                <ul class="cart-top-left">
+                    <li class="MyCart">查看购物车</li>
+                    <li class="fr f12">您在购物过程中如有任何疑问，请随时联系我们</li>
+                </ul>
+                <div class="footline">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <!--包裹购物车-->
+            <div class="cart-wrap" style="display: block;">
+                <div class="w">
+                    <div id="jd-cart">
+                        <div class="cartmain">
+                            <div class="cart-thead">
+                                <div class="cart-col t-checkbox">
+                                    <div class="cart-checkbox">
+                                        <input type="checkbox" checked="" name="" id="" class="allsel" value="" /> 全选
+                                    </div>
+                                </div>
+                                <div class="cart-col t-goods">商品</div>
+                                <div class="cart-col t-props"></div>
+                                <div class="cart-col t-prices">单价(元)</div>
+                                <div class="cart-col t-quantity">数量</div>
+                                <div class="cart-col t-sum">小计(元)</div>
+                                <div class="cart-col t-action">操作</div>
+                            </div>
+                            <div id="cart-list">
+                                <div class="cart-item-list">
+                                    <div class="cart-tbody">
+                                        <!-- 显示购物车列表 -->
+                                        <div class="item-list">
+                                            <div class="goods-item goods-item-sele" style="display: none;">
+                                                <div class="goods-info">
+                                                    <div class="cell b-checkbox">
+                                                        <div class="cart-checkbox">
+                                                            <input type="checkbox" checked="" name="" id="" value="" />
+                                                            <span class="line-circle"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell b-goods">
+                                                        <div class="goods-name">
+                                                            <div class="goods-pic">
+                                                                <a href=""><img src="" alt="" /></a>
+                                                            </div>
+                                                            <div class="goods-msg">
+                                                                <div class="goods-d-info">
+                                                                    <a href="">1111111111111</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell b-props">
+                                                        <div class="prop-text"></div>
+                                                    </div>
+                                                    <div class="cell b-price">
+                                                        <strong>99.99</strong>
+                                                        <div class="sales-promotion-dropdown">
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell b-quantity">
+                                                        <div class="quantity-form">
+                                                            <a class="quantity-down" href="javascript:void(0)">-</a>
+                                                            <input type="text" value="1" />
+                                                            <a class="quantity-add" href="javascript:void(0)">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell b-sum">
+                                                        <b></b><strong>99.99</strong>
+                                                    </div>
+                                                    <div class="cell b-action">
+                                                        <a href="javascript:void(0)" class="remove">删除</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cart-floatbar">
+                        <div class="select-all">
+                            <div class="cart-checkbox">
+                                <input type="checkbox" checked="" name="" id="" class="allsel" value="" /> 全选
+                            </div>
+                        </div>
+                        <div class="operation">
+                            <a href="javascript:void(0)">删除选中的商品</a>
+                        </div>
+                        <div class="toolbar-right">
+                            <div class="btn-area">
+                                <a href=""></a>
+                            </div>
+                            <div class="price-sum">
+                                <span class="txt">总价（不含运费）：</span>
+                                <span class="totalprice">￥0.00</span>
+
+                            </div>
+                            <div class="amount-sum">
+                                已选择
+                                <em>0</em> 件商品
+                                <b></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
